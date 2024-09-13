@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "Main";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Bootstrap 5 Sidebar</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            overflow-x: hidden;
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background-color: #343a40;
+            padding-top: 1rem;
+            transition: all 0.3s;
+        }
+
+            .sidebar a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 15px;
+                display: block;
+                font-size: 1.1rem;
+            }
+
+                .sidebar a .bi {
+                    margin-right: 10px;
+                    font-size: 1.2rem;
+                }
+
+                .sidebar a:hover {
+                    background-color: #495057;
+                    color: #ffc107;
+                }
+
+                .sidebar a.active {
+                    background-color: #007bff;
+                    color: white;
+                }
+
+            .sidebar .nav-item + .nav-item {
+                margin-top: 0.5rem;
+            }
+
+        .content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+
+        .product-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0.5rem;
+        }
+
+            .product-list li {
+                padding: 10px 0;
+                border-bottom: 1px solid #dee2e6;
+            }
+
+                .product-list li:last-child {
+                    border-bottom: none;
+                }
+
+            .product-list .product-name {
+                font-weight: bold;
+                color: white;
+            }
+
+            .product-list .product-details {
+                font-size: 0.9rem;
+                color: #adb5bd;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="">
+                    <i class="bi bi-house-fill"></i> Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="~/Users/Index">
+                    <i class="bi bi-person-fill"></i> Users
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="~/Roles/Index">
+                    <i class="bi bi-shield-lock-fill"></i> Roles
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="~/Categories/Index">
+                    <i class="bi bi-list"></i> Categories
+                </a>
+                <!-- Add a collapsible section for Products -->
+                <div class="product-list">
+                    <ul>
+                        <li>
+                            <span class="product-name">Mobile</span>
+                            <div class="product-details">Quantity: 10 | Price: $500 </div>
+                        </li>
+                        <li>
+                            <span class="product-name">Laptop</span>
+                            <div class="product-details">Quantity: 5 | Price: $700</div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2>Main Content Area</h2>
+        <p>This is the main content area. Add your page content here.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.js"></script>
+</body>
+</html>

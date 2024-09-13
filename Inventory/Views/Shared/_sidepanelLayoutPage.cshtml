@@ -1,0 +1,42 @@
+﻿@using System.Web.Mvc.Html;
+@using System.Web.Mvc;
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Inventory</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/site.css" rel="stylesheet" />
+  
+</head>
+<body>
+    @if (Session["name"] != null)
+    {
+        <div class="d-flex">
+            <nav id="sidebar" class="bg-dark text-white p-4" style="width: 250px;">
+                <h4>Welcome, @Session["name"]</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="@Url.Action("Main", "Logins")">Main</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="@Url.Action("Logout", "Logins")">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="content p-4" style="margin-left: 250px;">
+                @RenderBody()
+            </div>
+        </div>
+    }
+    else
+    {
+        @RenderBody()
+    }
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
